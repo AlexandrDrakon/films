@@ -1,27 +1,40 @@
-# Films
+# Тестовое задание
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+## Описание
 
-## Development server
+Нужно написать одностраничное приложения (SPA) для просмотра фильмов с помощью The Movie Database API.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+При открытии приложения, должен отображаться список популярных фильмов с пагинацией или динамической подгрузкой (на выбор). Также на странице должно быть поле для поиска. Когда вы вводите туда какой-либо текст, должны отобразиться фильмы которые ему соответствуют. Для каждого фильма в списке должен отображаться список жанров, к которым он принадлежит.
 
-## Code scaffolding
+При клике на карточку с фильмом, должна быть показана страница с детальной информацией об этом фильме и списком рекомендованных или похожих (можно и то, и то) фильмов к нему.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Также реализуйте возможность добавлять фильмы в избранное как со списка, так и на странице с отдельным фильмом. Список таких фильмов сохраняйте локально (localStorage, например). Предусмотрите просмотр списка с избранными фильмами где-то в приложении и удаление из избранного. Также предусмотрите отображение на карточке с фильмом и его странице информации о том, что этот фильм добавлен в избранное.
 
-## Build
+Верстка и оформление страниц остается на ваше усмотрение.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Также приветствует развернутое приложение на одном из общедоступных сервисов.
+(например,GitHub, Heroku https://www.heroku.com/, openshift https://www.openshift.com/)
 
-## Running unit tests
+## Технологии
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+При реализации задания необходимо использовать Angular 7.
 
-## Running end-to-end tests
+## Полезные материалы
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Ссылки с документацией к API:
 
-## Further help
+https://developers.themoviedb.org/3
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+https://developers.themoviedb.org/3/movies/get-popular-movies
+
+https://developers.themoviedb.org/3/search/search-movies
+
+https://developers.themoviedb.org/3/genres
+
+https://developers.themoviedb.org/3/movies/get-movie-details
+
+https://developers.themoviedb.org/3/movies/get-movie-recommendations
+
+### Ссылки на предпочтительные компоненты:
+
+https://material.angular.io/component
