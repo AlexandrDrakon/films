@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -12,14 +14,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { appReducers, appEffects } from './store/app';
 import { environment } from '../environments/environment';
 import { ApiKeyInterceptor } from './interceptors/api-key.interceptor';
+import { FilmsListComponent } from './films-list/films-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilmsListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(appEffects),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),

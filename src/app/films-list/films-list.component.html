@@ -1,0 +1,17 @@
+<div class="films-list__container">
+  <h1 class="mat-h1">Movie list</h1>
+  <mat-grid-list cols="5">
+    <mat-grid-tile *ngFor="let film of films$ | async">
+      <mat-card class="films-list__card">
+        <mat-card-header>
+          <mat-card-title>{{film.title}}</mat-card-title>
+          <mat-card-subtitle>Жанры: ...</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="films-list__card-content">
+          <div class="films-list__overview">{{ film.overview}}</div>
+          <img mat-card-image class="films-list__poster" [src]="'http://image.tmdb.org/t/p/w92/' + film.poster_path">
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
