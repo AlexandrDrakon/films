@@ -7,15 +7,12 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class FilmsService {
-  filmsUrl = `${environment.apiUrl}/movie/popular`;
+export class GenresService {
+  genresUrl = `${environment.apiUrl}/genre/movie/list`;
 
   constructor(private http: HttpClient) { }
 
-  getFilms(page: number): Observable<any> {
-    const params = {
-      page: `${page}`
-    };
-    return this.http.get(this.filmsUrl, { params });
+  getGenres(): Observable<any> {
+    return this.http.get(this.genresUrl);
   }
 }

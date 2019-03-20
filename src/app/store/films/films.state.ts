@@ -5,5 +5,5 @@ export interface IFilmsState {
 }
 
 export const initialFilmsState: IFilmsState = {
-  films: []
+  films: null
 };

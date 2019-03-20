@@ -13,7 +13,7 @@ export class FilmsEffects {
     ofType<GetFilms>(EFilmsActions.GetFilms),
     map(action => action.payload),
     switchMap(page => this.filmsService.getFilms(page)),
-    switchMap(data => of(new GetFilmsSuccess(data)))
+    switchMap(data => of(new GetFilmsSuccess(data.results)))
   );
 
   constructor(
