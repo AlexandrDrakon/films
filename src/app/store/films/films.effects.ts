@@ -4,7 +4,15 @@ import { of } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 
 import { FilmsService } from '../../services/films.service';
-import { GetFilms, EFilmsActions, GetFilmsSuccess, SearchFilms, SearchFilmsSuccess } from './films.action';
+import {
+  EFilmsActions,
+  GetFilms,
+  GetFilmsSuccess,
+  SearchFilms,
+  SearchFilmsSuccess,
+  GetFilmsItem,
+  GetFilmsItemSuccess
+} from './films.action';
 
 @Injectable()
 export class FilmsEffects {
@@ -13,7 +21,7 @@ export class FilmsEffects {
     ofType<GetFilms>(EFilmsActions.GetFilms),
     map(action => action.payload),
     switchMap(page => this.filmsService.getFilms(page)),
-    switchMap(data => of(new GetFilmsSuccess(data)))
+    switchMap(response => of(new GetFilmsSuccess(response)))
   );
 
   @Effect()
@@ -21,7 +29,15 @@ export class FilmsEffects {
     ofType<SearchFilms>(EFilmsActions.SearchFilms),
     map(action => action.payload),
     switchMap(data => this.filmsService.searchFilms(data)),
-    switchMap(data => of(new SearchFilmsSuccess(data)))
+    switchMap(response => of(new SearchFilmsSuccess(response)))
+  );
+
+  @Effect()
+  getFilmsItem$ = this.actions$.pipe(
+    ofType<GetFilmsItem>(EFilmsActions.GetFilmsItem),
+    map(action => action.payload),
+    switchMap(id => this.filmsService.getFilmsItem(id)),
+    switchMap(response => of(new GetFilmsItemSuccess(response)))
   );
 
   constructor(

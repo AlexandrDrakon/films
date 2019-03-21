@@ -11,7 +11,8 @@ import {
   MatButtonModule,
   MatPaginatorModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatToolbarModule
 } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
@@ -23,15 +24,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { appReducers, appEffects } from './store/app';
 import { environment } from '../environments/environment';
-import { ApiKeyInterceptor } from './interceptors/api-key.interceptor';
+import { RequestInterceptor } from './interceptors/request.interceptor';
 import { FilmsListComponent } from './films-list/films-list.component';
 import { GenresPipe } from './pipes/genres.pipe';
+import { FilmsItemComponent } from './films-item/films-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmsListComponent,
-    GenresPipe
+    GenresPipe,
+    FilmsItemComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { GenresPipe } from './pipes/genres.pipe';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(appEffects),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
@@ -53,7 +57,7 @@ import { GenresPipe } from './pipes/genres.pipe';
     AppRoutingModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

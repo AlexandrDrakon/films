@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class ApiKeyInterceptor implements HttpInterceptor {
+export class RequestInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.includes(environment.apiUrl)) {
       const paramReq = req.clone({
-        params: req.params.set('api_key', environment.api_key)
+        params: req.params
+          .set('api_key', environment.api_key)
+          .set('language', 'ru')
       });
       return next.handle(paramReq);
     }

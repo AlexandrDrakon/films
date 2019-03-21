@@ -1,11 +1,13 @@
 import { Action } from '@ngrx/store';
-import { IFilmHttp, IFilmParams } from '../../models/film.interface';
+import { IFilmHttp, IFilmParams, IFilm } from '../../models/film.interface';
 
 export enum EFilmsActions {
   GetFilms = '[Films] Get Films',
   GetFilmsSuccess = '[Films] Get Films Success',
   SearchFilms = '[Films] Search Films',
-  SearchFilmsSuccess = '[Films] Search Films Success'
+  SearchFilmsSuccess = '[Films] Search Films Success',
+  GetFilmsItem = '[Films] Get Films Item',
+  GetFilmsItemSuccess = '[Films] Get Films Item Success'
 }
 
 export class GetFilms implements Action {
@@ -28,4 +30,17 @@ export class SearchFilmsSuccess implements Action {
   constructor(public payload: IFilmHttp) {}
 }
 
-export type FilmsActions = GetFilms | GetFilmsSuccess | SearchFilms | SearchFilmsSuccess;
+export class GetFilmsItem implements Action {
+  public readonly type = EFilmsActions.GetFilmsItem;
+  constructor(public payload: string) {}
+}
+
+export class GetFilmsItemSuccess implements Action {
+  public readonly type = EFilmsActions.GetFilmsItemSuccess;
+  constructor(public payload: IFilm) {}
+}
+
+export type FilmsActions =
+  GetFilms | GetFilmsSuccess |
+  SearchFilms | SearchFilmsSuccess |
+  GetFilmsItem | GetFilmsItemSuccess;

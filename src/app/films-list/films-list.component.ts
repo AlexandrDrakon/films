@@ -33,7 +33,7 @@ export class FilmsListComponent implements OnInit {
 
   searchFilms() {
     this.query = this.seachText;
-    this.paginator.firstPage();
+    this.paginator.pageIndex = 0;
     this.getFilms();
   }
 

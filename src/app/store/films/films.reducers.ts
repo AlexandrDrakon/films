@@ -19,6 +19,13 @@ export const filmsReducers = (
       };
     }
 
+    case EFilmsActions.GetFilmsItemSuccess: {
+      return {
+        ...state,
+        filmsItem: action.payload
+      };
+    }
+
     default:
       return state;
   }

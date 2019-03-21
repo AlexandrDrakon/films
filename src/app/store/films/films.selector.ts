@@ -19,3 +19,8 @@ export const selectFilmsTotalSize = createSelector(
   selectFilms,
   (state: IFilmsState) => state.pagination.totalSize
 );
+
+export const selectFilmsItem = createSelector(
+  selectFilms,
+  (state: IFilmsState) => state.filmsItem
+);

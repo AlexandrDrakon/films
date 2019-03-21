@@ -11,6 +11,7 @@ import { IFilmParams } from '../models/film.interface';
 export class FilmsService {
   urlPopularFilms = `${environment.apiUrl}/movie/popular`;
   urlSearchFilms = `${environment.apiUrl}/search/movie`;
+  urlFilm = `${environment.apiUrl}/movie`;
 
   constructor(private http: HttpClient) { }
 
@@ -27,5 +28,9 @@ export class FilmsService {
       query: data.query
     };
     return this.http.get(this.urlSearchFilms, { params });
+  }
+
+  getFilmsItem(id: string): Observable<any> {
+    return this.http.get(`${this.urlFilm}/${id}`);
   }
 }

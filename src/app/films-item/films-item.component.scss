@@ -1,0 +1,14 @@
+.films-item {
+  &__container {
+    width: 600px;
+    margin: 20px;
+  }
+  &__card {
+    text-align: center;
+  }
+  &__poster {
+    width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+}
