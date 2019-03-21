@@ -24,7 +24,7 @@ export class FilmsListComponent implements OnInit {
   constructor(private store: Store<IAppState>) {}
 
   ngOnInit() {
-    this.store.dispatch(new GetFilms(1));
+    this.getFilms();
   }
 
   onChangePage(event) {
@@ -37,7 +37,7 @@ export class FilmsListComponent implements OnInit {
     this.getFilms();
   }
 
-  getFilms(page: number = 1) {
+  private getFilms(page: number = 1) {
     if (!this.query) {
       this.store.dispatch(new GetFilms(page));
     } else {
