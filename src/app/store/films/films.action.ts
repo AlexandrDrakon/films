@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IFilm } from '../../models/film.interface';
+import { IFilmHttp } from '../../models/film.interface';
 
 export enum EFilmsActions {
   GetFilms = '[Films] Get Films',
@@ -8,12 +8,12 @@ export enum EFilmsActions {
 
 export class GetFilms implements Action {
   public readonly type = EFilmsActions.GetFilms;
-  constructor(public payload: number) {}
+  constructor(public payload: number = 1) {}
 }
 
 export class GetFilmsSuccess implements Action {
   public readonly type = EFilmsActions.GetFilmsSuccess;
-  constructor(public payload: IFilm[]) {}
+  constructor(public payload: IFilmHttp) {}
 }
 
 export type FilmsActions = GetFilms | GetFilmsSuccess;

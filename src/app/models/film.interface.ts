@@ -1,4 +1,20 @@
 export interface IFilm {
+  genre_ids: number[];
   id: number;
+  overview: string;
+  poster_path: string;
   title: string;
+}
+
+export interface IFilmPagination {
+  page: number;
+  pageSize: number;
+  totalSize: number;
+}
+
+export interface IFilmHttp {
+  results: IFilm[];
+  page: number;
+  total_pages: number;
+  total_results: number;
 }

@@ -9,3 +9,13 @@ export const selectFilmsList = createSelector(
   selectFilms,
   (state: IFilmsState) => state.films
 );
+
+export const selectFilmsPageSize = createSelector(
+  selectFilms,
+  (state: IFilmsState) => state.pagination.pageSize
+);
+
+export const selectFilmsTotalSize = createSelector(
+  selectFilms,
+  (state: IFilmsState) => state.pagination.totalSize
+);

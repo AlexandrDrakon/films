@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatPaginatorModule } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -32,6 +32,7 @@ import { GenresPipe } from './pipes/genres.pipe';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatPaginatorModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(appEffects),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),

@@ -14,4 +14,8 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <mat-paginator [length]="totalSize$ | async"
+                 [pageSize]="pageSize$ | async"
+                 (page)="onChangePage($event)">
+  </mat-paginator>
 </div>
