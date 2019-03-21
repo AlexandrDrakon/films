@@ -12,6 +12,11 @@ export interface IFilmPagination {
   totalSize: number;
 }
 
+export interface IFilmParams {
+  page: number;
+  query: string;
+}
+
 export interface IFilmHttp {
   results: IFilm[];
   page: number;

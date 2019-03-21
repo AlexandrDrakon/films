@@ -6,7 +6,8 @@ export const filmsReducers = (
   action: FilmsActions
 ): IFilmsState => {
   switch (action.type) {
-    case EFilmsActions.GetFilmsSuccess: {
+    case EFilmsActions.GetFilmsSuccess:
+    case EFilmsActions.SearchFilmsSuccess: {
       return {
         ...state,
         films: action.payload.results,

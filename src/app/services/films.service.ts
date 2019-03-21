@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
+import { IFilmParams } from '../models/film.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmsService {
-  filmsUrl = `${environment.apiUrl}/movie/popular`;
+  urlPopularFilms = `${environment.apiUrl}/movie/popular`;
+  urlSearchFilms = `${environment.apiUrl}/search/movie`;
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +18,14 @@ export class FilmsService {
     const params = {
       page: `${page}`
     };
-    return this.http.get(this.filmsUrl, { params });
+    return this.http.get(this.urlPopularFilms, { params });
+  }
+
+  searchFilms(data: IFilmParams): Observable<any> {
+    const params = {
+      page: `${data.page}`,
+      query: data.query
+    };
+    return this.http.get(this.urlSearchFilms, { params });
   }
 }
