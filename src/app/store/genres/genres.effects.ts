@@ -12,7 +12,7 @@ export class GenresEffects {
   getGenres$ = this.actions$.pipe(
     ofType<GetGenres>(EGenresActions.GetGenres),
     switchMap(() => this.genresService.getGenres()),
-    switchMap(data => of(new GetGenresSuccess(data)))
+    switchMap(data => of(new GetGenresSuccess(data.genres)))
   );
 
   constructor(

@@ -15,11 +15,13 @@ import { appReducers, appEffects } from './store/app';
 import { environment } from '../environments/environment';
 import { ApiKeyInterceptor } from './interceptors/api-key.interceptor';
 import { FilmsListComponent } from './films-list/films-list.component';
+import { GenresPipe } from './pipes/genres.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilmsListComponent
+    FilmsListComponent,
+    GenresPipe
   ],
   imports: [
     BrowserModule,
