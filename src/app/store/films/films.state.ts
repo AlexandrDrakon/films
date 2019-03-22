@@ -1,17 +1,18 @@
-import { IFilm, IFilmPagination } from '../../models/film.interface';
+import { IFilm, IFilmsWithPagination } from '../../models/film.interface';
 
 export interface IFilmsState {
-  films: IFilm[];
-  pagination: IFilmPagination;
+  films: IFilmsWithPagination;
   filmsItem: IFilm;
 }
 
 export const initialFilmsState: IFilmsState = {
-  films: null,
-  pagination: {
-    page: null,
-    pageSize: null,
-    totalSize: null
+  films: {
+    list: null,
+    pagination: {
+      page: null,
+      pageSize: null,
+      totalSize: null
+    }
   },
   filmsItem: null
 };

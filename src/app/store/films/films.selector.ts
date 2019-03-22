@@ -7,17 +7,17 @@ const selectFilms = (state: IAppState) => state.films;
 
 export const selectFilmsList = createSelector(
   selectFilms,
-  (state: IFilmsState) => state.films
+  (state: IFilmsState) => state.films.list
 );
 
 export const selectFilmsPageSize = createSelector(
   selectFilms,
-  (state: IFilmsState) => state.pagination.pageSize
+  (state: IFilmsState) => state.films.pagination.pageSize
 );
 
 export const selectFilmsTotalSize = createSelector(
   selectFilms,
-  (state: IFilmsState) => state.pagination.totalSize
+  (state: IFilmsState) => state.films.pagination.totalSize
 );
 
 export const selectFilmsItem = createSelector(

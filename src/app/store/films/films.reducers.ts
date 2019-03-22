@@ -10,11 +10,13 @@ export const filmsReducers = (
     case EFilmsActions.SearchFilmsSuccess: {
       return {
         ...state,
-        films: action.payload.results,
-        pagination: {
-          page: action.payload.page,
-          pageSize: action.payload.results.length,
-          totalSize: action.payload.total_results
+        films: {
+          list: action.payload.results,
+          pagination: {
+            page: action.payload.page,
+            pageSize: action.payload.results.length,
+            totalSize: action.payload.total_results
+          }
         }
       };
     }
