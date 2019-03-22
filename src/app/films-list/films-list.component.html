@@ -1,6 +1,6 @@
 <div class="films-list__container">
   <h2 class="mat-h2 films-list__title">Список фильмов</h2>
-  <form (ngSubmit)="searchFilms()" #form="ngForm">
+  <form (ngSubmit)="searchFilms()">
     <mat-form-field class="films-list__search">
       <input type="search" matInput [(ngModel)]="seachText" name="search" placeholder="Поиск">
     </mat-form-field>
@@ -19,7 +19,11 @@
         </mat-card-header>
         <mat-card-content class="films-list__card-content">
           <div class="films-list__overview">{{ film.overview || 'Описание отсутствует'}}</div>
-          <img mat-card-image class="films-list__poster" [src]="'http://image.tmdb.org/t/p/w92/' + film.poster_path">
+          <img
+            mat-card-image
+            class="films-list__poster"
+            [src]="film.poster_path ? 'http://image.tmdb.org/t/p/w92/' + film.poster_path : ''"
+          >
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

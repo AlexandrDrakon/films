@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MatPaginator } from '@angular/material';
@@ -11,8 +11,7 @@ import { IAppState } from '../store/app';
   templateUrl: './films-list.component.html',
   styleUrls: ['./films-list.component.scss']
 })
-export class FilmsListComponent implements OnInit {
-  @ViewChild('form') form: NgForm;
+export class FilmsListComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   films$ = this.store.select(selectFilmsList);
@@ -22,10 +21,6 @@ export class FilmsListComponent implements OnInit {
   query = '';
 
   constructor(private store: Store<IAppState>) {}
-
-  ngOnInit() {
-    this.getFilms();
-  }
 
   onChangePage(event) {
     this.getFilms(event.pageIndex + 1);
