@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { MatPaginator } from '@angular/material';
 
 import { selectFilmsList, selectFilmsPageSize, selectFilmsTotalSize, GetFilms, SearchFilms } from '../store/films';
 import { IAppState } from '../store/app';
+import { AddFavoriteFilm } from '../store/favorite-films';
+import { IFilm } from '../models/film.interface';
 
 @Component({
   selector: 'app-films-list',
@@ -41,5 +42,9 @@ export class FilmsListComponent {
         query: this.query
       }));
     }
+  }
+
+  addFavoriteFilm(film: IFilm) {
+    this.store.dispatch(new AddFavoriteFilm(film));
   }
 }
