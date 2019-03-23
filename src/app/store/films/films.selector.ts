@@ -29,3 +29,8 @@ export const selectRecommendedFilms = createSelector(
   selectFilms,
   (state: IFilmsState) => state.recommendedFilms.list
 );
+
+export const selectSimilarFilms = createSelector(
+  selectFilms,
+  (state: IFilmsState) => state.similarFilms.list
+);

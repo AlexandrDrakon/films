@@ -9,7 +9,9 @@ export enum EFilmsActions {
   GetFilmsItem = '[Films] Get Films Item',
   GetFilmsItemSuccess = '[Films] Get Films Item Success',
   GetRecommendedFilms = '[Films] Get Recommended Films',
-  GetRecommendedFilmsSuccess = '[Films] Get Recommended Films Success'
+  GetRecommendedFilmsSuccess = '[Films] Get Recommended Films Success',
+  GetSimilarFilms = '[Films] Get Similar Films',
+  GetSimilarFilmsSuccess = '[Films] Get Similar Films Success'
 }
 
 export class GetFilms implements Action {
@@ -52,8 +54,19 @@ export class GetRecommendedFilmsSuccess implements Action {
   constructor(public payload: IFilmHttp) {}
 }
 
+export class GetSimilarFilms implements Action {
+  public readonly type = EFilmsActions.GetSimilarFilms;
+  constructor(public payload: string) {}
+}
+
+export class GetSimilarFilmsSuccess implements Action {
+  public readonly type = EFilmsActions.GetSimilarFilmsSuccess;
+  constructor(public payload: IFilmHttp) {}
+}
+
 export type FilmsActions =
   GetFilms | GetFilmsSuccess |
   SearchFilms | SearchFilmsSuccess |
   GetFilmsItem | GetFilmsItemSuccess |
-  GetRecommendedFilms | GetRecommendedFilmsSuccess;
+  GetRecommendedFilms | GetRecommendedFilmsSuccess |
+  GetSimilarFilms | GetSimilarFilmsSuccess;

@@ -13,7 +13,9 @@ import {
   GetFilmsItem,
   GetFilmsItemSuccess,
   GetRecommendedFilms,
-  GetRecommendedFilmsSuccess
+  GetRecommendedFilmsSuccess,
+  GetSimilarFilms,
+  GetSimilarFilmsSuccess
 } from './films.action';
 
 @Injectable()
@@ -48,6 +50,14 @@ export class FilmsEffects {
     map(action => action.payload),
     switchMap(id => this.filmsService.getRecommendedFilms(id)),
     switchMap(response => of(new GetRecommendedFilmsSuccess(response)))
+  );
+
+  @Effect()
+  getSimilarFilms$ = this.actions$.pipe(
+    ofType<GetSimilarFilms>(EFilmsActions.GetSimilarFilms),
+    map(action => action.payload),
+    switchMap(id => this.filmsService.getSimilarFilms(id)),
+    switchMap(response => of(new GetSimilarFilmsSuccess(response)))
   );
 
   constructor(

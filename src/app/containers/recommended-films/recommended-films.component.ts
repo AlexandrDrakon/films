@@ -1,10 +1,9 @@
-import { selectRecommendedFilms } from './../../store/films/films.selector';
 import { Component, Input, OnChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { IAppState } from '../../store/app';
-import { GetRecommendedFilms } from '../../store/films';
 import { IFilm } from '../../models/film.interface';
+import { GetRecommendedFilms, selectRecommendedFilms } from '../../store/films';
 
 @Component({
   selector: 'app-recommended-films',

@@ -38,4 +38,9 @@ export class FilmsService {
     const urlRecommendedFilms = `${environment.apiUrl}/movie/${id}/recommendations`;
     return this.http.get(urlRecommendedFilms);
   }
+
+  getSimilarFilms(id: string): Observable<any> {
+    const urlSimilarFilms = `${environment.apiUrl}/movie/${id}/similar`;
+    return this.http.get(urlSimilarFilms);
+  }
 }

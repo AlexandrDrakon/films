@@ -4,6 +4,7 @@ export interface IFilmsState {
   films: IFilmsWithPagination;
   filmsItem: IFilm;
   recommendedFilms: IFilmsWithPagination;
+  similarFilms: IFilmsWithPagination;
 }
 
 export const initialFilmsState: IFilmsState = {
@@ -17,6 +18,9 @@ export const initialFilmsState: IFilmsState = {
   },
   filmsItem: null,
   recommendedFilms: {
+    list: null
+  },
+  similarFilms: {
     list: null
   }
 };

@@ -37,6 +37,15 @@ export const filmsReducers = (
       };
     }
 
+    case EFilmsActions.GetSimilarFilmsSuccess: {
+      return {
+        ...state,
+        similarFilms: {
+          list: action.payload.results
+        }
+      };
+    }
+
     default:
       return state;
   }

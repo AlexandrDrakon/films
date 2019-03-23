@@ -30,6 +30,7 @@ import { GenresPipe } from './pipes/genres.pipe';
 import { FilmsItemComponent } from './films-item/films-item.component';
 import { RecommendedFilmsComponent } from './containers/recommended-films/recommended-films.component';
 import { FilmsShortListComponent } from './components/films-short-list/films-short-list.component';
+import { SimilarFilmsComponent } from './containers/similar-films/similar-films.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FilmsShortListComponent } from './components/films-short-list/films-sho
     GenresPipe,
     FilmsItemComponent,
     RecommendedFilmsComponent,
-    FilmsShortListComponent
+    FilmsShortListComponent,
+    SimilarFilmsComponent
   ],
   imports: [
     BrowserModule,
