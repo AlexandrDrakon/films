@@ -28,6 +28,15 @@ export const filmsReducers = (
       };
     }
 
+    case EFilmsActions.GetRecommendedFilmsSuccess: {
+      return {
+        ...state,
+        recommendedFilms: {
+          list: action.payload.results
+        }
+      };
+    }
+
     default:
       return state;
   }

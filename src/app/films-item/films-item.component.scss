@@ -1,15 +1,20 @@
-.films-item {
-  &__container {
-    width: 600px;
-    margin: 20px;
-  }
-  &__card {
-    text-align: center;
-  }
-  &__poster {
-    width: 300px;
-    height: 450px;
-    display: block;
-    margin: 0 auto 20px;
-  }
+.container {
+  margin: 20px;
+}
+
+mat-card {
+  width: 600px;
+  text-align: center;
+}
+
+mat-card-content {
+  display: flex;
+  text-align: justify;
+}
+
+img[mat-card-image] {
+  display: block;
+  width: 300px;
+  height: 450px;
+  margin: 0 10px;
 }

@@ -1,0 +1,17 @@
+ul {
+  display: flex;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 5px;
+  list-style: none;
+}
+
+img {
+  display: block;
+  height: 138px;
+  width: 92px;
+}

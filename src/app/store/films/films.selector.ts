@@ -24,3 +24,8 @@ export const selectFilmsItem = createSelector(
   selectFilms,
   (state: IFilmsState) => state.filmsItem
 );
+
+export const selectRecommendedFilms = createSelector(
+  selectFilms,
+  (state: IFilmsState) => state.recommendedFilms.list
+);

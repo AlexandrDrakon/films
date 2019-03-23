@@ -3,6 +3,7 @@ import { IFilm, IFilmsWithPagination } from '../../models/film.interface';
 export interface IFilmsState {
   films: IFilmsWithPagination;
   filmsItem: IFilm;
+  recommendedFilms: IFilmsWithPagination;
 }
 
 export const initialFilmsState: IFilmsState = {
@@ -14,5 +15,8 @@ export const initialFilmsState: IFilmsState = {
       totalSize: null
     }
   },
-  filmsItem: null
+  filmsItem: null,
+  recommendedFilms: {
+    list: null
+  }
 };

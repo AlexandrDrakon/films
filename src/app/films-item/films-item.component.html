@@ -1,5 +1,5 @@
-<div class="films-item__container">
-  <mat-card class="films-item__card">
+<div class="container">
+  <mat-card>
     <mat-card-title>{{ filmsItem.title }}</mat-card-title>
     <mat-card-subtitle>
       <div>
@@ -16,14 +16,15 @@
       </div>
       <div>Средний рейтинг: {{filmsItem.vote_average}}</div>
     </mat-card-subtitle>
-    <img
-      mat-card-image
-      class="films-item__poster"
-      [src]="filmsItem.poster_path ? 'http://image.tmdb.org/t/p/w342/' + filmsItem.poster_path: ''"
-    >
+    
     <mat-card-content>
-      {{ filmsItem.overview || 'Описание отсутствует' }}
+      <div>{{ filmsItem.overview || 'Описание отсутствует' }}</div>
+      <img
+        mat-card-image
+        [src]="filmsItem.poster_path ? 'http://image.tmdb.org/t/p/w342/' + filmsItem.poster_path: ''"
+      >
     </mat-card-content>
   </mat-card>
 
+  <app-recommended-films [filmId]="filmsItem.id"></app-recommended-films>
 </div>

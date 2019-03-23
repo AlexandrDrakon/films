@@ -28,13 +28,17 @@ import { RequestInterceptor } from './interceptors/request.interceptor';
 import { FilmsListComponent } from './films-list/films-list.component';
 import { GenresPipe } from './pipes/genres.pipe';
 import { FilmsItemComponent } from './films-item/films-item.component';
+import { RecommendedFilmsComponent } from './containers/recommended-films/recommended-films.component';
+import { FilmsShortListComponent } from './components/films-short-list/films-short-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmsListComponent,
     GenresPipe,
-    FilmsItemComponent
+    FilmsItemComponent,
+    RecommendedFilmsComponent,
+    FilmsShortListComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,6 @@ import { IFilmParams } from '../models/film.interface';
 export class FilmsService {
   urlPopularFilms = `${environment.apiUrl}/movie/popular`;
   urlSearchFilms = `${environment.apiUrl}/search/movie`;
-  urlFilm = `${environment.apiUrl}/movie`;
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +30,12 @@ export class FilmsService {
   }
 
   getFilmsItem(id: string): Observable<any> {
-    return this.http.get(`${this.urlFilm}/${id}`);
+    const urlFilm = `${environment.apiUrl}/movie/${id}`;
+    return this.http.get(urlFilm);
+  }
+
+  getRecommendedFilms(id: string): Observable<any> {
+    const urlRecommendedFilms = `${environment.apiUrl}/movie/${id}/recommendations`;
+    return this.http.get(urlRecommendedFilms);
   }
 }
