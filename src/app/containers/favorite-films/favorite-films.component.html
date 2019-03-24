@@ -1,0 +1,4 @@
+<div class="container">
+  <app-films-full-list [films]="favoriteFilms"></app-films-full-list>
+  <p *ngIf="!favoriteFilms.length">Нет избранных фильмов</p>
+</div>

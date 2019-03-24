@@ -3,14 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PopularFilmsComponent } from './containers/popular-films/popular-films.component';
 import { FilmsItemComponent } from './films-item/films-item.component';
+import { FavoriteFilmsComponent } from './containers/favorite-films/favorite-films.component';
 import { GenresResolver } from './resolvers/genres.resolver';
 import { FilmsListResolver } from './resolvers/films-list.resolver';
 import { FilmsItemResolver } from './resolvers/films-item.resolver';
 
 const routes: Routes = [
-  { path: 'films', component: PopularFilmsComponent, resolve: { genres: GenresResolver, filmsList: FilmsListResolver } },
-  { path: 'films/:id', component: FilmsItemComponent, resolve: { filmsItem: FilmsItemResolver } },
-  { path: '', redirectTo: '/films', pathMatch: 'full'}
+  { path: 'popular-films', component: PopularFilmsComponent, resolve: { genres: GenresResolver, filmsList: FilmsListResolver } },
+  { path: 'popular-films/:id', component: FilmsItemComponent, resolve: { filmsItem: FilmsItemResolver } },
+  { path: 'favorite-films', component: FavoriteFilmsComponent, resolve: { genres: GenresResolver } },
+  { path: '', redirectTo: '/popular-films', pathMatch: 'full'}
 ];
 
 @NgModule({

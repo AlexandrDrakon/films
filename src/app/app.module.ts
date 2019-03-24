@@ -32,6 +32,8 @@ import { RecommendedFilmsComponent } from './containers/recommended-films/recomm
 import { FilmsShortListComponent } from './components/films-short-list/films-short-list.component';
 import { SimilarFilmsComponent } from './containers/similar-films/similar-films.component';
 import { FilmsFullListComponent } from './containers/films-full-list/films-full-list.component';
+import { FavoriteFilmsComponent } from './containers/favorite-films/favorite-films.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { FilmsFullListComponent } from './containers/films-full-list/films-full-
     RecommendedFilmsComponent,
     FilmsShortListComponent,
     SimilarFilmsComponent,
-    FilmsFullListComponent
+    FilmsFullListComponent,
+    FavoriteFilmsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
