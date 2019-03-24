@@ -2,17 +2,17 @@ import { Component, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MatPaginator } from '@angular/material';
 
-import { selectFilmsList, selectFilmsPageSize, selectFilmsTotalSize, GetFilms, SearchFilms } from '../store/films';
-import { IAppState } from '../store/app';
-import { AddFavoriteFilm } from '../store/favorite-films';
-import { IFilm } from '../models/film.interface';
+import { selectFilmsList, selectFilmsPageSize, selectFilmsTotalSize, GetFilms, SearchFilms } from '../../store/films';
+import { IAppState } from '../../store/app';
+import { AddFavoriteFilm } from '../../store/favorite-films';
+import { IFilm } from '../../models/film.interface';
 
 @Component({
-  selector: 'app-films-list',
-  templateUrl: './films-list.component.html',
-  styleUrls: ['./films-list.component.scss']
+  selector: 'app-popular-films',
+  templateUrl: './popular-films.component.html',
+  styleUrls: ['./popular-films.component.scss']
 })
-export class FilmsListComponent {
+export class PopularFilmsComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   films$ = this.store.select(selectFilmsList);

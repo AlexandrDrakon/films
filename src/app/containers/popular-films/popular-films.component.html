@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="mat-h2 title">Список фильмов</h2>
+  <form (ngSubmit)="searchFilms()">
+    <mat-form-field class="search">
+      <input type="search" matInput [(ngModel)]="seachText" name="search" placeholder="Поиск">
+    </mat-form-field>
+    <button mat-icon-button type="submit">
+      <mat-icon aria-label="Search">search</mat-icon>
+    </button>
+  </form>
+
+  <app-films-full-list [films]="films$ | async"></app-films-full-list>
+
+  <mat-paginator [length]="totalSize$ | async"
+                 [pageSize]="pageSize$ | async"
+                 (page)="onChangePage($event)">
+  </mat-paginator>
+</div>

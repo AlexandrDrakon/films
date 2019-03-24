@@ -28,7 +28,7 @@ export class FavoriteFilmsEffects {
     ofType<AddFavoriteFilm>(EFavoriteFilms.AddFavoriteFilm),
     map(action => action.payload),
     map(film => this.favoriteFilmsService.addFavoriteFilm(film)),
-    switchMap(films => of(new DeleteFavoriteFilmSuccess(films)))
+    switchMap(films => of(new AddFavoriteFilmSuccess(films)))
   );
 
   @Effect()

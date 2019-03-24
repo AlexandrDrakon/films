@@ -1,0 +1,24 @@
+mat-card {
+  height: 320px;
+  width: 100%;
+  margin: 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+mat-card-content {
+  display: flex;
+  height: 138px;
+  justify-content: space-between;
+  .overview {
+    overflow: auto;
+    text-align: justify;
+  }
+  img[mat-card-image] {
+    height: 138px;
+    width: 92px;
+    min-width: 92px;
+    margin: 0 0 0 10px;
+  }
+}

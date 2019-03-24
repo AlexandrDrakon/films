@@ -25,22 +25,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { appReducers, appEffects } from './store/app';
 import { environment } from '../environments/environment';
 import { RequestInterceptor } from './interceptors/request.interceptor';
-import { FilmsListComponent } from './films-list/films-list.component';
+import { PopularFilmsComponent } from './containers/popular-films/popular-films.component';
 import { GenresPipe } from './pipes/genres.pipe';
 import { FilmsItemComponent } from './films-item/films-item.component';
 import { RecommendedFilmsComponent } from './containers/recommended-films/recommended-films.component';
 import { FilmsShortListComponent } from './components/films-short-list/films-short-list.component';
 import { SimilarFilmsComponent } from './containers/similar-films/similar-films.component';
+import { FilmsFullListComponent } from './containers/films-full-list/films-full-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilmsListComponent,
+    PopularFilmsComponent,
     GenresPipe,
     FilmsItemComponent,
     RecommendedFilmsComponent,
     FilmsShortListComponent,
-    SimilarFilmsComponent
+    SimilarFilmsComponent,
+    FilmsFullListComponent
   ],
   imports: [
     BrowserModule,
