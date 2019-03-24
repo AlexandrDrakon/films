@@ -27,7 +27,7 @@ import { environment } from '../environments/environment';
 import { RequestInterceptor } from './interceptors/request.interceptor';
 import { PopularFilmsComponent } from './containers/popular-films/popular-films.component';
 import { GenresPipe } from './pipes/genres.pipe';
-import { FilmsItemComponent } from './films-item/films-item.component';
+import { FilmsItemComponent } from './containers/films-item/films-item.component';
 import { RecommendedFilmsComponent } from './containers/recommended-films/recommended-films.component';
 import { FilmsShortListComponent } from './components/films-short-list/films-short-list.component';
 import { SimilarFilmsComponent } from './containers/similar-films/similar-films.component';

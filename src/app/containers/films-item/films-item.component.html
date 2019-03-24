@@ -2,12 +2,7 @@
   <mat-card>
     <mat-card-title>{{ filmsItem.title }}</mat-card-title>
     <mat-card-subtitle>
-      <div>
-        <span>Жанры:</span>
-        <span *ngFor="let genre of filmsItem.genres; last as isLast">
-          {{ genre.name }}{{!isLast ? ',' : ''}}
-        </span>
-      </div>
+      <div>Жанры: {{filmsItem | genres}}</div>
       <div>
         <span>Страны:</span>
         <span *ngFor="let country of filmsItem.production_countries; last as isLast">
@@ -24,6 +19,22 @@
         [src]="filmsItem.poster_path ? 'http://image.tmdb.org/t/p/w342/' + filmsItem.poster_path: ''"
       >
     </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-button
+        *ngIf="favoriteFilmsIds.indexOf(filmsItem.id) === -1"
+        (click)="addFavoriteFilm(filmsItem)"
+      >
+        Добавить в избранное
+      </button>
+      <button
+        mat-button
+        *ngIf="favoriteFilmsIds.indexOf(filmsItem.id) !== -1"
+        (click)="deleteFavoriteFilm(filmsItem)"
+      >
+        Удалить из избранного
+      </button>
+    </mat-card-actions>
   </mat-card>
 
   <app-recommended-films [filmId]="filmsItem.id"></app-recommended-films>

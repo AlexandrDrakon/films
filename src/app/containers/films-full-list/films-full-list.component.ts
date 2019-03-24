@@ -12,14 +12,13 @@ import { selectFavoriteFilmsList, AddFavoriteFilm, DeleteFavoriteFilm } from '..
 })
 export class FilmsFullListComponent {
   @Input() films: IFilm[];
-  favoriteFilms: IFilm[];
   favoriteFilmsIds: number[];
 
   constructor(private store: Store<IAppState>) {
     this.store.select(selectFavoriteFilmsList)
       .subscribe(list => {
-        this.favoriteFilms = list || [];
-        this.favoriteFilmsIds = this.favoriteFilms.map(film => film.id);
+        const favoriteFilms = list || [];
+        this.favoriteFilmsIds = favoriteFilms.map(film => film.id);
       });
   }
 

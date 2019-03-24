@@ -1,9 +1,12 @@
 export interface IFilm {
-  genre_ids: number[];
+  genre_ids?: number[];
+  genres?: { id: number; name: string; }[];
   id: number;
   overview: string;
   poster_path: string;
+  production_countries?: { id: number; name: string; }[];
   title: string;
+  vote_average: number;
 }
 
 export interface IFilmPagination {
